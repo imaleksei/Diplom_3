@@ -4,11 +4,13 @@ import io.qameta.allure.Description;
 import io.qameta.allure.Issue;
 import io.qameta.allure.TmsLink;
 import io.qameta.allure.junit4.DisplayName;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.chrome.ChromeDriver;
 import stellarburgerspageobject.MainPage;
 
+import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.WebDriverRunner.setWebDriver;
 import static org.junit.Assert.assertTrue;
@@ -25,6 +27,11 @@ public class ConstructorTest {
         driver = new ChromeDriver();
         setWebDriver(driver);
         mainPage = open(MAIN_PAGE_URL, MainPage.class);
+    }
+
+    @After
+    public void tearDown() {
+        closeWebDriver();
     }
 
     @Test

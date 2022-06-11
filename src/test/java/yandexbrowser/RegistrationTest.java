@@ -48,6 +48,7 @@ public class RegistrationTest {
         } catch(IllegalArgumentException error) {
                 //client doesnt exist
             }
+        closeWebDriver();
     }
 
     @Test
@@ -68,7 +69,6 @@ public class RegistrationTest {
         registrationPage.clickRegistrationButton();
 
         webdriver().shouldHave(url(LOGIN_PAGE_URL));
-        closeWebDriver();
     }
 
     @Test
@@ -89,6 +89,5 @@ public class RegistrationTest {
         registrationPage.clickRegistrationButton();
 
         assertTrue("Error password field not displayed", registrationPage.errorPasswordFieldIsDisplayed());
-        closeWebDriver();
     }
 }

@@ -42,6 +42,7 @@ public class LoginTest {
     @After
     public void tearDown() {
         userClient.deleteUser(accessToken);
+        closeWebDriver();
     }
 
     @Test
@@ -58,7 +59,6 @@ public class LoginTest {
         loginPage.clickEnterButton();
 
         webdriver().shouldHave(url(MAIN_PAGE_URL));
-        closeWebDriver();
     }
 
     @Test
@@ -75,7 +75,6 @@ public class LoginTest {
         loginPage.clickEnterButton();
 
         webdriver().shouldHave(url(MAIN_PAGE_URL));
-        closeWebDriver();
     }
 
     @Test
@@ -97,7 +96,6 @@ public class LoginTest {
         loginPage.clickEnterButton();
 
         webdriver().shouldHave(url(MAIN_PAGE_URL));
-        closeWebDriver();
     }
 
     @Test
@@ -119,7 +117,6 @@ public class LoginTest {
         loginPage.clickEnterButton();
 
         webdriver().shouldHave(url(MAIN_PAGE_URL));
-        closeWebDriver();
     }
 }
 

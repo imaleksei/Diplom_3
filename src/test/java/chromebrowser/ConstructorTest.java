@@ -5,10 +5,12 @@ import io.qameta.allure.Description;
 import io.qameta.allure.Issue;
 import io.qameta.allure.TmsLink;
 import io.qameta.allure.junit4.DisplayName;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import stellarburgerspageobject.MainPage;
 
+import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static com.codeborne.selenide.Selenide.open;
 import static org.junit.Assert.assertTrue;
 import static stellarburgerspageobject.MainPage.MAIN_PAGE_URL;
@@ -21,6 +23,11 @@ public class ConstructorTest {
     public void setUp() {
         Configuration.browser = "chrome";
         mainPage = open(MAIN_PAGE_URL, MainPage.class);
+    }
+
+    @After
+    public void tearDown() {
+        closeWebDriver();
     }
 
     @Test

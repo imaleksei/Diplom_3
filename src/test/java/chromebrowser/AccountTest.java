@@ -44,6 +44,7 @@ public class AccountTest {
     @After
     public void tearDown() {
         userClient.deleteUser(accessToken);
+        closeWebDriver();
     }
 
     @Test
@@ -62,7 +63,6 @@ public class AccountTest {
         mainPage.clickAccountButton();
 
         webdriver().shouldHave(url(PROFILE_PAGE_URL));
-        closeWebDriver();
     }
 
     @Test
@@ -84,7 +84,6 @@ public class AccountTest {
         profilePage.clickConstructorButton();
 
         webdriver().shouldHave(url(MAIN_PAGE_URL));
-        closeWebDriver();
     }
 
     @Test
@@ -106,7 +105,6 @@ public class AccountTest {
         profilePage.clickLogoPicture();
 
         webdriver().shouldHave(url(MAIN_PAGE_URL));
-        closeWebDriver();
     }
 
     @Test
@@ -128,6 +126,5 @@ public class AccountTest {
         profilePage.clickExitButton();
 
         webdriver().shouldHave(url(LOGIN_PAGE_URL));
-        closeWebDriver();
     }
 }
